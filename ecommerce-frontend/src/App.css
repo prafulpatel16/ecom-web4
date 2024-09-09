@@ -1,0 +1,117 @@
+/* Basic Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .App {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #2d3436;
+  }
+  
+  input, button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1em;
+  }
+  
+  input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+  }
+  
+  button {
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .product-item {
+    background-color: #fff;
+    margin: 10px auto;
+    padding: 15px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .product-name {
+    font-weight: bold;
+  }
+  
+  .product-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-button, .delete-button {
+    background-color: #0984e3;
+    color: white;
+  }
+  
+  .delete-button {
+    background-color: #d63031;
+  }
+  
+  /* Queue Section */
+  .queue-section {
+    margin-top: 30px;
+  }
+  
+  .queue-messages-list {
+    text-align: left;
+  }
+  
+  .queue-message {
+    background-color: #ff7675;
+    color: white;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 4px;
+  }
+  
+  /* Cache Section */
+  .cache-section {
+    margin-top: 30px;
+  }
+  
+  .cache-test-results {
+    background-color: #ffeaa7;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+  }
+  
+  /* Login/Logout Buttons */
+  button.login-button, button.logout-button {
+    background-color: #6c5ce7;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 4px;
+  }
+  
+  button.login-button:hover, button.logout-button:hover {
+    background-color: #a29bfe;
+  }
+  
