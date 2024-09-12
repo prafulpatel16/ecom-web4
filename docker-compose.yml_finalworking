@@ -1,19 +1,17 @@
 version: '3.8'
 
 services:
-  # Frontend service
   frontend:
     build: ./ecommerce-frontend
     ports:
       - '3000:80'
     env_file:
-      - ./ecommerce-frontend/.env
+      - ./ecommerce-frontend/.env  
     depends_on:
       - backend
     networks:
       - app-network
 
-  # Backend service
   backend:
     build: ./ecommerce-backend
     ports:
@@ -26,7 +24,6 @@ services:
     networks:
       - app-network
 
-  # PostgreSQL Database service
   db:
     build: ./database
     image: postgres:13
@@ -41,7 +38,6 @@ services:
     networks:
       - app-network
 
-  # RabbitMQ service
   rabbitmq:
     container_name: rabbitmq4
     image: rabbitmq:3-management
@@ -53,31 +49,11 @@ services:
       RABBITMQ_DEFAULT_PASS: guest
     networks:
       - app-network
-
-  # Redis service
   redis:
     container_name: redis4
     image: 'redis:alpine'
     ports:
       - '6379:6379'
-    networks:
-      - app-network
-
-  # New Relic Infrastructure agent service
-  newrelic-infra:
-    build: ./newrelic-infra
-    container_name: newrelic-infra
-    cap_add:
-      - SYS_PTRACE
-    pid: host
-    privileged: true
-    volumes:
-      - "/:/host:ro"
-      - "/var/run/docker.sock:/var/run/docker.sock"
-    environment:
-      NEW_RELIC_LICENSE_KEY: 'e4a31eb0b9e6e5681de5cf2da861c9eaFFFFNRA'
-      NRIA_LOG_FILE: "/var/log/newrelic-infra.log"
-    restart: unless-stopped
     networks:
       - app-network
 
